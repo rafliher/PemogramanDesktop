@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Desktop5_CaffeeShopWithLogin
 {
     public partial class MenuAddDetail : Form
     {
-        private string name;
+        public string name;
         private int initialPrice;
         public int price;
         public string size = "M";
@@ -79,7 +80,7 @@ namespace Desktop5_CaffeeShopWithLogin
                 MessageBox.Show("Please specify levels");
             } else
             {
-                MessageBox.Show("The total is Rp. " + price.ToString());
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }

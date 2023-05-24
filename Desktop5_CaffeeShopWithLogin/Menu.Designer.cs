@@ -38,7 +38,13 @@
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
+            ordersLabel = new Label();
+            groupBox2 = new GroupBox();
+            priceLabel = new Label();
+            payButton = new Button();
+            button4 = new Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -61,7 +67,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(225, 98);
+            button3.Location = new Point(225, 97);
             button3.Name = "button3";
             button3.Size = new Size(34, 29);
             button3.TabIndex = 8;
@@ -143,17 +149,71 @@
             label1.TabIndex = 0;
             label1.Text = "Espresso ";
             // 
+            // ordersLabel
+            // 
+            ordersLabel.AutoSize = true;
+            ordersLabel.Location = new Point(13, 32);
+            ordersLabel.Name = "ordersLabel";
+            ordersLabel.Size = new Size(0, 20);
+            ordersLabel.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(ordersLabel);
+            groupBox2.Location = new Point(12, 174);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(555, 229);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Your Orders";
+            // 
+            // priceLabel
+            // 
+            priceLabel.AutoSize = true;
+            priceLabel.Location = new Point(329, 427);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new Size(51, 20);
+            priceLabel.TabIndex = 3;
+            priceLabel.Text = "Rp. 0,-";
+            // 
+            // payButton
+            // 
+            payButton.Location = new Point(473, 418);
+            payButton.Name = "payButton";
+            payButton.Size = new Size(94, 29);
+            payButton.TabIndex = 4;
+            payButton.Text = "pay";
+            payButton.UseVisualStyleBackColor = true;
+            payButton.Click += payButton_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(13, 410);
+            button4.Name = "button4";
+            button4.Size = new Size(109, 33);
+            button4.TabIndex = 5;
+            button4.Text = "printButton";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += printButton_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(298, 178);
+            ClientSize = new Size(581, 456);
+            Controls.Add(button4);
+            Controls.Add(payButton);
+            Controls.Add(priceLabel);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Menu";
             Text = "Caffe PoltekSSN";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -168,5 +228,10 @@
         private Button button1;
         private Label label2;
         private Label label1;
+        private Label ordersLabel;
+        private GroupBox groupBox2;
+        private Label priceLabel;
+        private Button payButton;
+        private Button button4;
     }
 }
