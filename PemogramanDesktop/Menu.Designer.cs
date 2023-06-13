@@ -1,8 +1,9 @@
-﻿using Microsoft.VisualBasic.FileIO;
+﻿using EllipticCurve.Utils;
+using Microsoft.VisualBasic.FileIO;
 using PemogramanDesktop;
 using System.Diagnostics;
 
-namespace DesktopQuiz1_CaffeeShopToFile
+namespace PemogramanDesktop
 {
     partial class Menu
     {
@@ -211,10 +212,10 @@ namespace DesktopQuiz1_CaffeeShopToFile
                     if (fields.Length == 2 && int.TryParse(fields[1], out int price))
                     {
                         Item item = new Item
-                        {
-                            Name = fields[0],
-                            Price = price
-                        };
+                        (
+                             fields[0],
+                            price
+                        );
                         items.Add(item);
                     }
                 }

@@ -3,7 +3,7 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
-namespace DesktopQuiz1_CaffeeShopToFile
+namespace PemogramanDesktop
 {
     public partial class Records : Form
     {
@@ -15,34 +15,33 @@ namespace DesktopQuiz1_CaffeeShopToFile
         private void MainForm_Load(object sender, EventArgs e)
         {
             recordsTable = new DataTable();
-            recordsTable.Columns.Add("name", typeof(string));
-            recordsTable.Columns.Add("amount", typeof(string));
+            recordsTable.Columns.Add("id", typeof(string));
             recordsTable.Columns.Add("price", typeof(string));
             recordsTable.Columns.Add("time", typeof(string));
 
-            LoadUsersFromCSV();
+            LoadRecordsFromCSV();
             BindItemsToGrid();
         }
 
-        private void LoadUsersFromCSV()
+        private void LoadRecordsFromCSV()
         {
             if (File.Exists(csvFilePath))
             {
                 using (var reader = new StreamReader(csvFilePath))
                 {
+                    reader.ReadLine();
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
                         var values = line.Split(',');
 
-                        if (values.Length == 4)
+                        if (values.Length == 3)
                         {
-                            var username = values[0].Trim();
-                            var password = values[1].Trim();
-                            var level = values[2].Trim();
-                            var level2 = values[3].Trim();
+                            var id = values[0].Trim();
+                            var price = values[1].Trim();
+                            var time = values[2].Trim();
 
-                            recordsTable.Rows.Add(username, password, level, level2);
+                            recordsTable.Rows.Add(id, price, time);
                         }
                     }
                 }

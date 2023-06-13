@@ -3,7 +3,7 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
-namespace DesktopQuiz1_CaffeeShopToFile
+namespace PemogramanDesktop
 {
     public partial class ItemManager : Form
     {

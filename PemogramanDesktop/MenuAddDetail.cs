@@ -9,25 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace DesktopQuiz1_CaffeeShopToFile
+namespace PemogramanDesktop
 {
     public partial class MenuAddDetail : Form
     {
         public string name;
-        private int initialPrice;
+        private int initialPrice = 0;
         public int price;
         public string size = "M";
         public int ice;
         public int sugar;
         public int amount = 1;
 
-        public MenuAddDetail(string _name, int _price)
+        public MenuAddDetail(Item item)
         {
             InitializeComponent();
-            this.Text = _name;
-            name = _name;
-            initialPrice = _price;
-            price = _price;
+            this.Text = item.Name;
+            name = item.Name;
+            initialPrice = item.Price;
+            price = item.Price;
             totalLabel.Text = "Total: Rp. " + initialPrice.ToString();
         }
 

@@ -1,4 +1,4 @@
-﻿namespace DesktopQuiz1_CaffeeShopToFile
+﻿namespace PemogramanDesktop
 {
     partial class UserManager
     {

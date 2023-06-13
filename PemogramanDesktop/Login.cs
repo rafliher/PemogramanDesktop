@@ -1,7 +1,7 @@
 using System.IO;
 using System.Linq;
 
-namespace DesktopQuiz1_CaffeeShopToFile
+namespace PemogramanDesktop
 {
     public partial class Login : Form
     {

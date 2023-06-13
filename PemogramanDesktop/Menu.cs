@@ -11,60 +11,144 @@ using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 using System;
 using System.IO;
+using CsvHelper;
+using System.Globalization;
+using System.Formats.Asn1;
+using QRCoder;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System.Transactions;
+using System.Drawing.Imaging;
+using System.Net;
 
-namespace DesktopQuiz1_CaffeeShopToFile
+namespace PemogramanDesktop
 {
     public partial class Menu : Form
     {
         private int total = 0;
-        List<string> records = new List<string>();
+        List<TransactionDetail> records = new();
 
         public Menu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void launchModal(string itemName, int itemPrice)
         {
-            launchModal("Espresso", 10000);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            launchModal("Latte", 15000);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            launchModal("Cappuccino", 12000);
-        }
-
-        private void launchModal(String name, int price)
-        {
-            MenuAddDetail menuAddDetail = new(name, price);
+            Item item = new Item(itemName, itemPrice);
+            MenuAddDetail menuAddDetail = new(item);
             DialogResult result = menuAddDetail.ShowDialog();
             int _p = 0;
             if (result == DialogResult.OK)
             {
-                _p = menuAddDetail.price;
-                ordersLabel.Text += $"{menuAddDetail.name} x{menuAddDetail?.amount.ToString()}: Rp. {_p.ToString()}\n";
-                total += _p;
+                TransactionDetail transaction = new(item.Name, menuAddDetail.amount, menuAddDetail.price);
+                records.Add(transaction);
+                ordersLabel.Text += $"{menuAddDetail.name} x{menuAddDetail?.amount.ToString()}: Rp. {menuAddDetail.price.ToString()}\n";
+                total += menuAddDetail.price;
                 priceLabel.Text = "Rp. " + total.ToString() + ",-";
-                records.Add($"{menuAddDetail.name},{menuAddDetail?.amount.ToString()},{_p},");
             }
         }
 
-        private void payButton_Click(object sender, EventArgs e)
+        private async void payButton_Click(object sender, EventArgs e)
         {
+            Transaction transaction = new(total);
+
+            foreach (TransactionDetail record in records)
+            {
+                record.Update(transaction.Id, DateTime.Now);
+            }
+
+            string transactionDetailsFilePath = "transactionDetails.csv";
+            string recordsFilePath = "records.csv";
+
+            using (StreamWriter writer = new StreamWriter(transactionDetailsFilePath, true))
+            using (CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                foreach (TransactionDetail record in records)
+                {
+                    csvWriter.WriteRecord(record);
+                    csvWriter.NextRecord();
+                }
+            }
+
+            using (StreamWriter writer2 = new StreamWriter(recordsFilePath, true))
+            using (CsvWriter csvWriter2 = new CsvWriter(writer2, CultureInfo.InvariantCulture))
+            {
+                csvWriter2.WriteRecord(transaction);
+                csvWriter2.NextRecord();
+            }
+
+            records = new(); // Clear the records list
+
             MessageBox.Show("Total is Rp. " + total.ToString() + ",-");
             priceLabel.Text = "Rp. 0,-";
             ordersLabel.Text = "";
             total = 0;
-            using StreamWriter writer = new StreamWriter("records.csv", true);
-            for (int i = 0; i < records.Count; i++)
+
+            string email = Microsoft.VisualBasic.Interaction.InputBox("Enter your email address:", "Email Prompt");
+
+            if (!string.IsNullOrWhiteSpace(email))
             {
-                writer.WriteLine(records[i] + DateTime.Now);
+                bool isEmailSent = await SendQR(transaction.Id, email);
+                if (isEmailSent)
+                {
+                MessageBox.Show("The receipt has been sent to your email.", "Receipt sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                MessageBox.Show("Please check configuration", "Something is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+            else
+            {
+                MessageBox.Show("Email address cannot be empty.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async Task<bool> SendQR(Guid guid, string email)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(guid.ToString(), QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(10); // Set the size of the QR code image (10 times the module size)
+
+            string qrCodeImagePath = "qrCode.png";
+            qrCodeImage.Save(qrCodeImagePath, ImageFormat.Png);
+
+            // Convert the QR code image to base64 string
+            byte[] qrCodeImageBytes = File.ReadAllBytes(qrCodeImagePath);
+            string qrCodeBase64String = Convert.ToBase64String(qrCodeImageBytes);
+
+            string apiKey = "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";
+            string senderEmail = "raflihw1@gmail.com";
+            string recipientEmail = email;
+            string emailSubject = "Transaction Details";
+
+            // Create the SendGrid client
+            SendGridClient sendGridClient = new SendGridClient(apiKey);
+
+            // Create the email message
+            SendGridMessage emailMessage = new SendGridMessage();
+            emailMessage.SetFrom(new EmailAddress(senderEmail));
+            emailMessage.AddTo(new EmailAddress(recipientEmail));
+            emailMessage.SetSubject(emailSubject);
+
+            // Add plain text content block
+            emailMessage.PlainTextContent = "Transaction details attached.";
+
+            // Attach the QR code image as base64 string
+            emailMessage.AddAttachment("QRCode.png", qrCodeBase64String, "image/png", "attachment");
+
+            // Send the email
+            var response = await sendGridClient.SendEmailAsync(emailMessage);
+
+            // Check the response status code
+            bool isEmailSent = response.StatusCode == HttpStatusCode.Accepted;
+
+            // Delete the temporary QR code image file
+            File.Delete(qrCodeImagePath);
+
+            return isEmailSent;
         }
 
         private void printButton_Click(object sender, EventArgs e)
