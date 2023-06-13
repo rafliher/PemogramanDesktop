@@ -8,19 +8,24 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rafli\\.nuget\\packages\\": {}
+    "C:\\Users\\rafli\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafli\\Documents\\projects\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin.csproj",
-      "projectName": "Desktop5_CaffeeShopWithLogin",
-      "projectPath": "C:\\Users\\rafli\\Documents\\projects\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin.csproj",
+      "projectUniqueName": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\PemogramanDesktop.csproj",
+      "projectName": "PemogramanDesktop",
+      "projectPath": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\PemogramanDesktop.csproj",
       "packagesPath": "C:\\Users\\rafli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafli\\Documents\\projects\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin\\obj\\",
+      "outputPath": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\rafli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

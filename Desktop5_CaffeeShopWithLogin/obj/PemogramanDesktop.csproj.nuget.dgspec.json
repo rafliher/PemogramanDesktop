@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin.csproj": {}
+    "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\PemogramanDesktop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin.csproj": {
+    "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\PemogramanDesktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin.csproj",
-        "projectName": "Desktop5_CaffeeShopWithLogin",
-        "projectPath": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\Desktop5_CaffeeShopWithLogin.csproj",
+        "projectUniqueName": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\PemogramanDesktop.csproj",
+        "projectName": "PemogramanDesktop",
+        "projectPath": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\PemogramanDesktop.csproj",
         "packagesPath": "C:\\Users\\rafli\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\rafli\\Documents\\projects\\PemogramanDesktop\\Desktop5_CaffeeShopWithLogin\\obj\\",
         "projectStyle": "PackageReference",

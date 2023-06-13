@@ -1,4 +1,4 @@
-namespace Desktop5_CaffeeShopWithLogin
+namespace PemogramanDesktop
 {
     public partial class Login : Form
     {

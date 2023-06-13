@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 
-namespace Desktop5_CaffeeShopWithLogin
+namespace PemogramanDesktop
 {
     public partial class Menu : Form
     {

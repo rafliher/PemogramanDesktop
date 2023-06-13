@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace Desktop5_CaffeeShopWithLogin
+namespace PemogramanDesktop
 {
     public partial class MenuAddDetail : Form
     {

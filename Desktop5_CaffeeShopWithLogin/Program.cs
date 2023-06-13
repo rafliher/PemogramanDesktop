@@ -1,4 +1,4 @@
-namespace Desktop5_CaffeeShopWithLogin
+namespace PemogramanDesktop
 {
     internal static class Program
     {
