@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PemogramanDesktop", "Desktop5_CaffeeShopWithLogin\PemogramanDesktop.csproj", "{B666E712-AA79-4D92-AB3A-C88D4B166DB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PemogramanDesktop", "PemogramanDesktop\PemogramanDesktop.csproj", "{B666E712-AA79-4D92-AB3A-C88D4B166DB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
