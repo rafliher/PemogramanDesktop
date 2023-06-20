@@ -4,6 +4,9 @@
     <Compile Update="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChatMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ItemManager.cs">
       <SubType>Form</SubType>
     </Compile>

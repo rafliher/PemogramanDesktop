@@ -40,7 +40,7 @@ namespace PemogramanDesktop
             payButton = new Button();
             button4 = new Button();
             button5 = new Button();
-            groupBox1.SuspendLayout();
+            chatButton = new Button();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +48,7 @@ namespace PemogramanDesktop
             // 
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(273, 152);
+            groupBox1.Size = new Size(273, 193);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Choose our menu";
@@ -64,7 +64,7 @@ namespace PemogramanDesktop
             // groupBox2
             // 
             groupBox2.Controls.Add(ordersLabel);
-            groupBox2.Location = new Point(12, 174);
+            groupBox2.Location = new Point(14, 211);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(555, 229);
             groupBox2.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace PemogramanDesktop
             // priceLabel
             // 
             priceLabel.AutoSize = true;
-            priceLabel.Location = new Point(329, 427);
+            priceLabel.Location = new Point(299, 453);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new Size(51, 20);
             priceLabel.TabIndex = 3;
@@ -82,9 +82,9 @@ namespace PemogramanDesktop
             // 
             // payButton
             // 
-            payButton.Location = new Point(473, 418);
+            payButton.Location = new Point(475, 447);
             payButton.Name = "payButton";
-            payButton.Size = new Size(94, 29);
+            payButton.Size = new Size(94, 33);
             payButton.TabIndex = 4;
             payButton.Text = "pay";
             payButton.UseVisualStyleBackColor = true;
@@ -92,26 +92,34 @@ namespace PemogramanDesktop
             // 
             // button4
             // 
-            button4.Location = new Point(13, 410);
+            button4.Location = new Point(15, 447);
             button4.Name = "button4";
             button4.Size = new Size(109, 33);
             button4.TabIndex = 5;
             button4.Text = "printButton";
             button4.UseVisualStyleBackColor = true;
             button4.Click += printButton_Click;
-
             // 
-            // button4
+            // button5
             // 
-            button5.Location = new Point(130, 410);
+            button5.Location = new Point(132, 447);
             button5.Name = "button5";
             button5.Size = new Size(130, 33);
             button5.TabIndex = 5;
             button5.Text = "RecordsButton";
             button5.UseVisualStyleBackColor = true;
             button5.Click += recordsButton_Click;
+            // 
+            // chatButton
+            // 
+            chatButton.Location = new Point(385, 97);
+            chatButton.Name = "chatButton";
+            chatButton.Size = new Size(94, 29);
+            chatButton.TabIndex = 6;
+            chatButton.Text = "use chatbot";
+            chatButton.UseVisualStyleBackColor = true;
+            chatButton.Click += chatButton_Click;
 
-            // Read item data from CSV file
             List<Item> items = ReadItemsFromCSV("items.csv");
 
             // Create buttons and labels dynamically based on the item data
@@ -157,7 +165,8 @@ namespace PemogramanDesktop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(581, 456);
+            ClientSize = new Size(581, 496);
+            Controls.Add(chatButton);
             Controls.Add(button4);
             Controls.Add(button5);
             Controls.Add(payButton);
@@ -166,14 +175,10 @@ namespace PemogramanDesktop
             Controls.Add(groupBox1);
             Name = "Menu";
             Text = "Caffe PoltekSSN";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
-
-
         }
 
         #endregion
@@ -223,5 +228,7 @@ namespace PemogramanDesktop
 
             return items;
         }
+
+        private Button chatButton;
     }
 }

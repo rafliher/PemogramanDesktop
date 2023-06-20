@@ -92,11 +92,11 @@ namespace PemogramanDesktop
                 bool isEmailSent = await SendQR(transaction.Id, email);
                 if (isEmailSent)
                 {
-                MessageBox.Show("The receipt has been sent to your email.", "Receipt sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The receipt has been sent to your email.", "Receipt sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                MessageBox.Show("Please check configuration", "Something is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please check configuration", "Something is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -182,8 +182,13 @@ namespace PemogramanDesktop
         }
         private void recordsButton_Click(object sender, EventArgs e)
         {
-            Records records = new Records();
+            Records records = new();
             records.ShowDialog();
+        }
+        private void chatButton_Click(object sender, EventArgs e)
+        {
+            ChatMenu chatMenu = new();
+            chatMenu.ShowDialog();
         }
     }
 }

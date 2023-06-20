@@ -48,6 +48,18 @@
               "target": "Package",
               "version": "[30.0.1, )"
             },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
+            "Microsoft.ML.FastTree": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.4.3, )"
