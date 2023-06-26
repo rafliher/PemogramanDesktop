@@ -1810,6 +1810,7 @@
       "CsvHelper >= 30.0.1",
       "Microsoft.ML >= 1.7.1",
       "Microsoft.ML.FastTree >= 1.7.1",
+      "Newtonsoft.Json >= 13.0.3",
       "OpenAI >= 1.7.2",
       "QRCoder >= 1.4.3",
       "SendGrid >= 9.28.1"
@@ -1870,6 +1871,10 @@
           "Microsoft.ML.FastTree": {
             "target": "Package",
             "version": "[1.7.1, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "OpenAI": {
             "target": "Package",

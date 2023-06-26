@@ -34,5 +34,11 @@ namespace PemogramanDesktop
             UserManager menu = new();
             menu.ShowDialog();
         }
+
+        private void APIButton_Click(object sender, EventArgs e)
+        {
+            APIAccess apiAccess = new();
+            apiAccess.ShowDialog();
+        }
     }
 }

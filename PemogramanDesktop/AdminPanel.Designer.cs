@@ -31,6 +31,7 @@
             cashierButton = new Button();
             itemButton = new Button();
             userManageButton = new Button();
+            APIButton = new Button();
             SuspendLayout();
             // 
             // cashierButton
@@ -63,11 +64,22 @@
             userManageButton.UseVisualStyleBackColor = true;
             userManageButton.Click += userManageButton_Click;
             // 
+            // APIButton
+            // 
+            APIButton.Location = new Point(14, 205);
+            APIButton.Name = "APIButton";
+            APIButton.Size = new Size(389, 48);
+            APIButton.TabIndex = 3;
+            APIButton.Text = "Access API";
+            APIButton.UseVisualStyleBackColor = true;
+            APIButton.Click += APIButton_Click;
+            // 
             // AdminPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(412, 208);
+            ClientSize = new Size(412, 259);
+            Controls.Add(APIButton);
             Controls.Add(userManageButton);
             Controls.Add(itemButton);
             Controls.Add(cashierButton);
@@ -81,5 +93,6 @@
         private Button cashierButton;
         private Button itemButton;
         private Button userManageButton;
+        private Button APIButton;
     }
 }

@@ -81,3 +81,4 @@ C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\
 C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win-x64\native\FastTreeNative.dll
 C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win-x86\native\FastTreeNative.dll
 C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\obj\Debug\net7.0-windows\PemogramanDesktop.ChatMenu.resources
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\obj\Debug\net7.0-windows\PemogramanDesktop.APIAccess.resources
