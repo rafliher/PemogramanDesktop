@@ -100,5 +100,11 @@ namespace PemogramanDesktop
 
             MessageBox.Show("Invalid credentials");
         }
+
+        private void SQLButton_Click(object sender, EventArgs e)
+        {
+            SQL sql = new();
+            sql.ShowDialog();
+        }
     }
 }

@@ -82,3 +82,11 @@ C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\
 C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win-x86\native\FastTreeNative.dll
 C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\obj\Debug\net7.0-windows\PemogramanDesktop.ChatMenu.resources
 C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\obj\Debug\net7.0-windows\PemogramanDesktop.APIAccess.resources
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\obj\Debug\net7.0-windows\PemogramanDesktop.SQL.resources
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\System.Data.SqlClient.dll
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rafli\Documents\projects\PemogramanDesktop\PemogramanDesktop\bin\Debug\net7.0-windows\PemogramanDesktop.dll.config

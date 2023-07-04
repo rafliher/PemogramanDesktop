@@ -33,6 +33,7 @@
             Password = new Label();
             passwordTextBox = new TextBox();
             loginButton = new Button();
+            SQLButton = new Button();
             SuspendLayout();
             // 
             // usernameTextBox
@@ -81,11 +82,22 @@
             loginButton.UseVisualStyleBackColor = true;
             loginButton.Click += loginButton_Click;
             // 
+            // SQLButton
+            // 
+            SQLButton.Location = new Point(12, 244);
+            SQLButton.Name = "SQLButton";
+            SQLButton.Size = new Size(94, 29);
+            SQLButton.TabIndex = 5;
+            SQLButton.Text = "SQL Demo";
+            SQLButton.UseVisualStyleBackColor = true;
+            SQLButton.Click += SQLButton_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(274, 188);
+            ClientSize = new Size(274, 285);
+            Controls.Add(SQLButton);
             Controls.Add(loginButton);
             Controls.Add(Password);
             Controls.Add(passwordTextBox);
@@ -105,5 +117,6 @@
         private Label Password;
         private TextBox passwordTextBox;
         private Button loginButton;
+        private Button SQLButton;
     }
 }
